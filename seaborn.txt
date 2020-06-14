@@ -1,0 +1,52 @@
+1. Distribution Plots
+	# For numerical data
+	import seaborn as sns
+	sns.load_dataset('tips')
+	sns.distplot(tips['total_bill],kde=False,bins=30) 
+	sns.set() #grid
+	sns.jointplot(x='total_bill',y='tip',data=tips,kind='scatter')
+	sns.pairplot(tips,hue='sex')
+	sns.rugplot()
+	sns.kdeplot()
+	
+
+2. Categorical Plots
+	# For categorical data/ Non-numeric
+	sns.barplot()
+	sns.countplot()
+	sns.boxplot()
+	sns.violingplot()
+	sns.stripplot()
+	sns.swarmplot()
+	sns.catplot() # factorplot
+
+	
+3. Matrix Plots
+	# For correlation data/matrix form
+	tips.corr()
+	sns.heatmap(tips.corr(),cmap='coolwarm',annot=True)
+	flights.pivot_table(values='passengers',index='month',columns='year')
+	sns.clustermap() # not in order anymore (based on color gradation)
+		
+	
+4. Grids
+	g = sns.PairGrid(iris)
+	g.map(plt.scatter)
+	g.map_diag(sns.distplot)
+	g.map_upper(plt.scatter)
+	g.map_lower(sns.kdeplot)
+	sns.pairplot(iris)
+	g.sns_FacetGrid(tips,col='time',row='smoker')
+	g.map().add_legend()
+	g = sns.JointGrid(x='total_bill',y='tip',data=tips)
+	
+
+5. Regression Plots
+	sns.lmplot()
+
+
+6. Style & Color
+	sns.set_style('darkgrid')
+	sns.despine()
+	sns.set_context
+	
