@@ -36,6 +36,7 @@
 	g.map_upper(plt.scatter)
 	g.map_lower(sns.kdeplot)
 	sns.pairplot(iris)
+	# always remember to input two below data in one cell
 	g.sns_FacetGrid(tips,col='time',row='smoker')
 	g.map().add_legend()
 	g = sns.JointGrid(x='total_bill',y='tip',data=tips)
